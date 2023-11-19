@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    background: hsl(240, 78%, 98%);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding-block: 70px; */
+    position: relative;
+    background: url('../images/bg-top.svg'), url('../images/bg-bottom.svg');
+    background-repeat: no-repeat;
+    background-position: right top, left bottom;
+}
+
+.card__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.card__title {
+    color: hsl(233, 13%, 49%);
+    font-size: 35px;
+}
+
+.card__mode {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card__mode h3 {
+    color: hsl(234, 14%, 74%);
+    transition: all 0.2s ease;
+}
+
+.mode-wrap {
+    width: 70px;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px;
+    background: linear-gradient(95deg , hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+.mode-circle {
+    width: calc(100% / 2);
+    height: 100%;
+    border-radius: 50%;
+    background-color: hsl(240, 78%, 98%);
+    position: relative;
+    right: calc(-100% / 2);
+    transition: all 0.4s cubic-bezier(0.8,-0.19, 0.15, 1.27);
+}
+
+.mode-floating {
+    right: 0;
+}
+
+.card__list {
+    display: flex;
+    align-items: center;
+}
+
+.card__list-item {
+    min-width: 330px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.card__list-item:nth-child(even) {
+    padding-block: 55px;
+    background: linear-gradient(125deg , hsl(236, 72%, 79%) 10%, hsl(237, 63%, 64%));
+}
+
+.card__list-item:not(:nth-child(even)):first-child {
+    border-radius: 10px 0 0 10px;
+}
+.card__list-item:not(:nth-child(even)):last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.card__list-item h3 {
+    color: hsl(233, 13%, 49%);
+}
+
+.card__list-item:nth-child(even) 
+:where(h3, h4, .testim__list-item, .card-btn) {
+    color: white;
+}
+
+.card__list-item h4 {
+    font-size: 35px;
+    color: hsl(232, 13%, 33%);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.priceValue {
+    font-size: 64px;
+}
+
+.testim__list {
+    width: 100%;
+}
+
+.testim__list-item {
+    width: 100%;
+    text-align: center;
+    padding-block: 20px;
+    color: hsl(233, 13%, 49%);
+    border-top: 1px solid hsl(234, 14%, 74%);
+}
+
+.card__list-item:nth-child(even) .testim__list-item {
+    border-color: hsla(240, 80%, 98%, 0.815);
+}
+
+.testim__list-item:last-child {
+    border-bottom: 1px solid hsl(234, 14%, 74%);
+}
+
+.card__list-item:nth-child(even) .testim__list-item:last-child {
+    border-color: hsla(240, 80%, 98%, 0.815);
+}
+
+.card-btn {
+    width: 100%;
+    text-align: center;
+    padding-block: 15px;
+    border-radius: 7px;
+    border: 1px solid transparent;
+    background: linear-gradient(90deg , hsl(236, 72%, 79%) 50%, hsl(237, 63%, 64%));
+    color: hsl(240, 78%, 98%);
+    transition: all 0.3s ease;
+}
+
+.card-btn:hover {
+    background: transparent;
+    color: hsl(237, 63%, 64%);
+    border-color: hsl(237, 63%, 64%);
+}
+
+.card__list-item:nth-child(even) .card-btn {
+    background: white;
+    color: hsl(237, 63%, 64%);
+}
+
+.card__list-item:nth-child(even) .card-btn:hover {
+    background: transparent;
+    color: white;
+    border-color: white;
+}   
+
+@media screen and (max-width: 1024px) {
+    .card {
+        height: auto;
+    }
+
+    .card__list {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card__list-item {
+        border-radius: 10px !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        padding: 10px;
+    }
+    .card__list-item {
+        min-width: 300px;
+        width: 100%;
+    }
+}
